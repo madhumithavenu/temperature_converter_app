@@ -1,7 +1,13 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Child from './Child';
 
 function App() {
+    const [tempObj, setTempObj] = useState({
+      scale: 'celsius',
+      temperature: 0,
+    });
+    
     const celsius =0;
     const fahrenheit =0;
     const kelvin =0;
@@ -24,5 +30,6 @@ function App() {
     
   );
 }
+
 
 export default App;
