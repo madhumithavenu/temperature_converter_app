@@ -7,19 +7,28 @@ function App() {
       scale: 'celsius',
       temperature: 0,
     });
-    
+
     const celsius =0;
     const fahrenheit =0;
     const kelvin =0;
 
-    function onCelsiusChange(){
-
+    function onCelsiusChange(tempValue){
+      setTempObj({
+        scale: 'celsius',
+        temperature: isNaN(tempValue) ? 0 : tempValue,
+      });
     }
     function onFahrenheitChange(){
-
+      setTempObj({
+        scale: 'fahrenheit',
+        temperature: isNaN(tempValue) ? 0 : tempValue,
+      });
     }
     function onKelvinChange(){
-
+      setTempObj({
+        scale: 'kelvin',
+        temperature: isNaN(tempValue) ? 0 : tempValue,
+      });
     }
   return (
     <div style={{"textAlign":"center"}}>
