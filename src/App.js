@@ -8,9 +8,17 @@ function App() {
       temperature: 0,
     });
 
-    const celsius =0;
-    const fahrenheit =0;
-    const kelvin =0;
+  const celsius = (tempObj.scale === 'fahrenheit' || tempObj.scale == 'kelvin') ?
+  (tempObj.scale == 'fahrenheit') ? f2c(tempObj.temperature) : k2c(tempObj.temperature)
+  : tempObj.temperature;
+
+  const fahrenheit = (tempObj.scale === 'celsius' || tempObj.scale == 'kelvin') ?
+  (tempObj.scale == 'celsius') ? c2f(tempObj.temperature) : k2f(tempObj.temperature)
+  : tempObj.temperature;
+
+  const kelvin = (tempObj.scale === 'celsius' || tempObj.scale == 'fahrenheit') ?
+  (tempObj.scale == 'celsius') ? c2k(tempObj.temperature) : f2k(tempObj.temperature)
+  : tempObj.temperature;
 
     function f2c(value){
       return ((value - 32) * 5) / 9;
@@ -42,13 +50,13 @@ function App() {
         temperature: isNaN(tempValue) ? 0 : tempValue,
       });
     }
-    function onFahrenheitChange(){
+    function onFahrenheitChange(tempValue){
       setTempObj({
         scale: 'fahrenheit',
         temperature: isNaN(tempValue) ? 0 : tempValue,
       });
     }
-    function onKelvinChange(){
+    function onKelvinChange(tempValue){
       setTempObj({
         scale: 'kelvin',
         temperature: isNaN(tempValue) ? 0 : tempValue,
