@@ -30,6 +30,7 @@ function App() {
         temperature: isNaN(tempValue) ? 0 : tempValue,
       });
     }
+    
   return (
     <div style={{"textAlign":"center"}}>
       <h2>Celsius: <Child temperature={celsius} onTemperatureChange={onCelsiusChange} /> </h2>
